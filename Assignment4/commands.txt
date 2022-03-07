@@ -5,13 +5,43 @@
 >db.createCollection('user')
 >db.user.insert({"first_name":"Vaishnavi"})
 >db.user.find().pretty()
->db.user.insert({"first_name":"vaishnavi","age":"22","last_name":"Bajaj","email":"vaishnavi_fw15_157@masai.school","gender":"Female"})
+>db.user.insert
+
+({"first_name":"vaishnavi","age":"22","last_name":"Bajaj","email":"vais
+
+hnavi_fw15_157@masai.school","gender":"Female"})
 //IN SAME WAY INSERT 10 DOCUMENTS IN MY COLLECTION
 
->db.user.insertMany([{"first_name":"vaishnavi","age":"22","last_name":"Bajaj","email":"vaishnavi_fw15_157@masai.school","gender":"Female"},{"first_name":"vaishnavi","age":"22","last_name":"Bajaj","email":"vaishnavi_fw15_157@masai.school","gender":"Female"},{"first_name":"vaishnavi","age":"22","last_name":"Bajaj","email":"vaishnavi_fw15_157@masai.school","gender":"Female"},{"first_name":"vaishnavi","age":"22","last_name":"Bajaj","email":"vaishnavi_fw15_157@masai.school","gender":"Female"},{"first_name":"vaishnavi","age":"22","last_name":"Bajaj","email":"vaishnavi_fw15_157@masai.school","gender":"Female"},])
+>db.user.insertMany
+
+([{"first_name":"vaishnavi","age":"22","last_name":"Bajaj","email":"vai
+
+shnavi_fw15_157@masai.school","gender":"Female"},
+
+{"first_name":"vaishnavi","age":"22","last_name":"Bajaj","email":"vaish
+
+navi_fw15_157@masai.school","gender":"Female"},
+
+{"first_name":"vaishnavi","age":"22","last_name":"Bajaj","email":"vaish
+
+navi_fw15_157@masai.school","gender":"Female"},
+
+{"first_name":"vaishnavi","age":"22","last_name":"Bajaj","email":"vaish
+
+navi_fw15_157@masai.school","gender":"Female"},
+
+{"first_name":"vaishnavi","age":"22","last_name":"Bajaj","email":"vaish
+
+navi_fw15_157@masai.school","gender":"Female"},])
 
 >db.user.find({}).pretty();
 >db.findOne({"_id: ObjectId("622641631256d288bfba474b")})
+>db.user.update({"_id":value},{$set{"city":"Latur"}})
+>db.user.updateMany({"first_name":"vaishnavi"},{$set{"country":"India","religion":"hindu"}})
+>db.user.remove({"City","Latur"})
+>db.user.update({"_id":value},{$unset{"city":"Latur"}})
+>db.dropDatabase();
+//END//
 
 
 
