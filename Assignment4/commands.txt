@@ -1,0 +1,17 @@
+
+//Commands Used In Assignment//
+
+>use assignment
+>db.createCollection('user')
+>db.user.insert({"first_name":"Vaishnavi"})
+>db.user.find().pretty()
+>db.user.insert({"first_name":"vaishnavi","age":"22","last_name":"Bajaj","email":"vaishnavi_fw15_157@masai.school","gender":"Female"})
+//IN SAME WAY INSERT 10 DOCUMENTS IN MY COLLECTION
+
+>db.user.insertMany([{"first_name":"vaishnavi","age":"22","last_name":"Bajaj","email":"vaishnavi_fw15_157@masai.school","gender":"Female"},{"first_name":"vaishnavi","age":"22","last_name":"Bajaj","email":"vaishnavi_fw15_157@masai.school","gender":"Female"},{"first_name":"vaishnavi","age":"22","last_name":"Bajaj","email":"vaishnavi_fw15_157@masai.school","gender":"Female"},{"first_name":"vaishnavi","age":"22","last_name":"Bajaj","email":"vaishnavi_fw15_157@masai.school","gender":"Female"},{"first_name":"vaishnavi","age":"22","last_name":"Bajaj","email":"vaishnavi_fw15_157@masai.school","gender":"Female"},])
+
+>db.user.find({}).pretty();
+>db.findOne({"_id: ObjectId("622641631256d288bfba474b")})
+
+
+
