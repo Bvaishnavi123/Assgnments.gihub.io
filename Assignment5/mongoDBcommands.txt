@@ -1,0 +1,49 @@
+//CREATE DATABASE
+//CREATE COLLECTIONS 
+
+>use movies_data
+>show collections
+>db.movies.find({}).pretty()
+#Q1.find all movies which are equal to movie_name?
+> db.movies.find({"movie_name ":{$eq:"Moving Violations"}}).pretty()
+
+#Q2.find all movies which are not equal to movie_name?
+> db.movies.find({"movie_name ":{$ne:"Moving Violations"}}).pretty()
+
+#Q3.find all movies greater than to a budget?
+> db.movies.find({"budget ":{$gt:9000}).pretty()
+
+#Q4.find all movies greater than and greater than equal to a budget?
+> db.movies.find({"budget ":{$gte:20000}}).pretty()
+
+#Q5.find all movies less than  to a budget?
+> db.movies.find({"budget ":{$lt:15000}}).pretty()
+
+#Q6.find all movies less than and less than equal to a budget?
+> db.movies.find({"budget ":{$lte:15000}}).pretty()
+
+#Q7.find all movies that are produced after 2000 with budget greater than 10000?
+> db.movies.find({$and:[{"production_year ":{$gt:2000}},{"budget ":{$gt:10000}}]}).pretty()
+
+#Q8.find all movies that are produced after 2000 or budget greater than 10000?
+> db.movies.find({$or:[{"production_year ":{$gt:2000}},{"budget ":{$gt:10000}}]}).pretty()
+
+#Q9.find all movies that are neither produced after 2000 nor with budget greater than 10000.?
+> db.movies.find({$nor:[{"production_year ":{$gt:2000}},{"budget ":{$gt:10000}}]}).pretty()
+
+#Q10.find all movies that are not produced in 2000 or they do not have budget of 10000?
+> db.movies.find({$or:[{"production_year ":{$not:{$ne:2000}}},{"budget ":{$not:{$eq:10000}}}]}).pretty()
+
+#Q11.find all movies that were produced from 2000 to 2010.?
+> db.movies.find({$and:[{"production_year ":{$gte:2000}},{"production_year ":{$lte:2010}}]}).pretty()
+
+#Q12.Sort all movies descending based on the production year and if the year is same then alphabetically for 
+
+their movie_names?
+> db.movies.find({}).sort({"production_year ":-1,"movie_name ":-1}).pretty()
+
+#Q13.in query 10 skip the first 10 entries and fetch the next 5?
+>db.movies.find({}).skip(10).limit(5).pretty();
+
+#Q14.remove movie genre from the first 10 movies in query 10.?
+>db.movies.find({},{"movie_genre ":0}).limit(10).pretty()
