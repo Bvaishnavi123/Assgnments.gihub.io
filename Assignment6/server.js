@@ -88,7 +88,7 @@ app.get("/books/:author", async (req, res) => {
 
 app.get("/books/:section", async (req, res) => {
   try {
-    const books = await Book.find({$and :[{"BookId.SectionId":{$eq : req.params.section}},{"checkOut":{$ne : "null"}}]}).populate("SectionId")
+    const books = await Book.find({$and :[{"BookId.SectionId":{$eq : req.params.section}},{"checkOut":{$ne : null}}]}).populate("SectionId")
       .lean()
       .exec();
     res.send(books);
@@ -99,7 +99,7 @@ app.get("/books/:section", async (req, res) => {
 
 app.get("/check/:section", async (req, res) => {
   try {
-    const books = await Check.find({"checkOut" :{$ne :"null"}}).populate("SectionId")
+    const books = await Check.find({"checkOut" :{$ne :null}}).populate("SectionId")
       .lean()
       .exec();
     res.send(books);
@@ -110,7 +110,7 @@ app.get("/check/:section", async (req, res) => {
 
 app.get("/check", async (req, res) => {
   try {
-    const books = await Check.find({"checkOut" :{$ne :"null"}}).populate("SectionId")
+    const books = await Check.find({"checkOut" :{$ne :null}}).populate("SectionId")
       .lean()
       .exec();
     res.send(books);
