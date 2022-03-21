@@ -59,4 +59,4 @@ const login = async(req,res)=>{
 
 
 // exporting reg and log in to index file
-module.exports ={register,login}
+module.exports ={register,login,generateToken}
