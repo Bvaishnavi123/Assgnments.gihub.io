@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema(
   {
     firstName: { type: String, required: true },
-    profilePic: [{ type: String, required: false }],
+    lastName: {type: String, required: false},
+    profilePic: [{ type: String, required: true }],
   },
   {
     versionKey: false,
@@ -11,4 +12,5 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("user", userSchema);
+const user = mongoose.model("user", userSchema);
+module.exports = user;
